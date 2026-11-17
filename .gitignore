@@ -1,0 +1,13 @@
+# Object files
+*.o
+
+# Executable files
+*.exe
+
+# Build folder
+build/
+
+# Debug files
+*.out
+*.dll
+*.pdb
