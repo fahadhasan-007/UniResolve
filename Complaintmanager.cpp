@@ -80,11 +80,17 @@ int ComplaintManager::addComplaint(
     string location,
     string description)
 {
-    // Generate complaint ID
-    int newID = nextComplaintID;
 
     // Determine priority automatically
     string priority = determinePriority(category);
+
+    // Unknown category: reject
+    if (priority == "Invalid")
+    {
+        return -1;
+    }
+    // Generate complaint ID
+    int newID = nextComplaintID;
 
     // Create complaint object
     Complaint newComplaint(
@@ -115,7 +121,7 @@ void ComplaintManager::viewAllComplaints() const
 
     cout << "\n========== ALL COMPLAINTS ==========\n";
 
-    for (int i = 0; i < complaints.size(); i++)
+    for (size_t i = 0; i < complaints.size(); i++)
     {
         complaints[i].display();
 
@@ -128,7 +134,7 @@ bool ComplaintManager::updateStatus(
     int complaintID,
     string newStatus)
 {
-    for (int i = 0; i < complaints.size(); i++)
+    for (size_t i = 0; i < complaints.size(); i++)
     {
         if (complaints[i].getComplaintID() == complaintID)
         {
@@ -161,7 +167,7 @@ bool ComplaintManager::updatePriority(
         return false;
     }
 
-    for (int i = 0; i < complaints.size(); i++)
+    for (size_t i = 0; i < complaints.size(); i++)
     {
         if (complaints[i].getComplaintID() == complaintID)
         {
@@ -177,7 +183,7 @@ bool ComplaintManager::updatePriority(
 // Delete complaint
 bool ComplaintManager::deleteComplaint(int complaintID)
 {
-    for (int i = 0; i < complaints.size(); i++)
+    for (size_t i = 0; i < complaints.size(); i++)
     {
         if (complaints[i].getComplaintID() == complaintID)
         {
