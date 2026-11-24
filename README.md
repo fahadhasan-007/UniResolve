@@ -1,7 +1,7 @@
 # UniResolve
 
 UniResolve is a University Issue Reporting and Resolution System.
-for students , faculty members and get solution regarding the issues.
+for students ,for getting  solution regarding the issues.
 
 ## Project Description
 
@@ -14,7 +14,7 @@ resolution status.
 - C++17
 - Object-Oriented Programming
 - STL Vector
-- File Handling (planned)
+- File Handling
 
 ## Current Features
 
