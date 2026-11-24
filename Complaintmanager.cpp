@@ -28,9 +28,14 @@ string ComplaintManager::determinePriority(string category) const
     }
 
     // Low priority
-    return "Low";
-}
+    if (category == "Furniture" || category == "Other")
+    {
+        return "Low";
+    }
 
+    // Unknown category
+    return "Invalid";
+}
 // Check whether priority is valid
 bool ComplaintManager::isValidPriority(string priority) const
 {
